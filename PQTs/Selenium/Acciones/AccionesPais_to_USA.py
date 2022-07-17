@@ -8,10 +8,10 @@ from PQTs.Selenium.Base import BaseAcciones
 from PQTs.Utilizar import urlSpotifysinginUS
 
 from selenium.common import exceptions
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-from selenium.webdriver.common.by import By
-org.openqa.selenium.support.ui.Select
+
 
 
     def ingresarSpotify(self):
@@ -71,5 +71,3 @@ org.openqa.selenium.support.ui.Select
             return True
         except:
             return False
-
-
