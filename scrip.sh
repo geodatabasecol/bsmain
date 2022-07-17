@@ -21,5 +21,5 @@ pip3 freeze
 whereis chromedriver
 whereis google-chrome
 echo "AQUI ACTUALIZA LA DB MONGODB"
-ECHO "TODO OK"
+echo "TODO OK"
 exit
