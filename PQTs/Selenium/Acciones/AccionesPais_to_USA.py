@@ -65,7 +65,7 @@ class Acciones(BaseAcciones):
             select_object= Select(select_element)
             select_object.select_by_value('US')
             time.sleep(3)
-            xpathbotonsave =(By.ID, '__next')
+            xpathbotonsave =(By.XPATH, '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/article/section/form/div/button')
             self.click(xpathbotonsave)
             print("click SAVE")
             time.sleep(8)
