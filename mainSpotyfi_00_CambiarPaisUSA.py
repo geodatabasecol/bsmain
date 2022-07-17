@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 #TESTTTTT
 
-import time
-from turtle import update
 from PQTs.MongoDB.MongoDB import MongoDB
 from PQTs.Selenium.Base import BaseConexion
 from PQTs.Selenium.Acciones.AccionesPais_to_USA import Acciones
