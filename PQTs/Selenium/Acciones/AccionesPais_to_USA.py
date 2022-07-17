@@ -3,15 +3,16 @@
 from os import access
 import random
 import time
-from tkinter.tix import Select
 from PQTs.Selenium.Base import BaseAcciones
 
 from PQTs.Utilizar import urlSpotifysinginUS
 
 from selenium.common import exceptions
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
-class Acciones(BaseAcciones):
+from selenium.webdriver.common.by import By
+org.openqa.selenium.support.ui.Select
+
 
     def ingresarSpotify(self):
         try:
@@ -61,9 +62,9 @@ class Acciones(BaseAcciones):
             xpathpaises = (By.XPATH, '//*[@id="country"]')
             lista=self.findElement(xpathpaises)
             items= Select(lista)
-            items.select_by_visible_text("US")
+            items.select_by_value('US')
             time.sleep(3)
-            xpathbotonsave='//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/article/section/form/div/button'
+            xpathbotonsave =(By.ID, '__next')
             self.click(xpathbotonsave)
             print("click SAVE")
             time.sleep(8)
