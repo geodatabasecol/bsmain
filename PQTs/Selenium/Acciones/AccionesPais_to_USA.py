@@ -57,9 +57,8 @@ class Acciones(BaseAcciones):
 
         try:  
             time.sleep(5)                            
-            xpathpaises = (By.XPATH, '//*[@id="country"]')
-            selecionar= self.findElement(xpathpaises)
-            self.selecionarlista(selecionar,"US")
+            xpathpaises = (By.XPATH, "//select*[@id='country']/option[text()='US']")
+            self.click(xpathpaises)
             time.sleep(3)
             xpathbotonsave='//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/article/section/form/div/button'
             self.click(xpathbotonsave)
@@ -67,3 +66,5 @@ class Acciones(BaseAcciones):
             return True
         except:
             return False
+
+

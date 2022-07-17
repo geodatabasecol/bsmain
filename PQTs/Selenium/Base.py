@@ -63,7 +63,7 @@ class BaseAcciones():
         return elemento
 
     def selecionarlista(self, el,valor):
-        el.select_by_value("US")
+        el.select_by_value(valor)
          
 
     def escribir(self, el, msj):
