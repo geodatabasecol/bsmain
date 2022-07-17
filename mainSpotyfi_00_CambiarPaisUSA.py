@@ -2,6 +2,7 @@
 #TESTTTTT
 
 import time
+from turtle import update
 from PQTs.MongoDB.MongoDB import MongoDB
 from PQTs.Selenium.Base import BaseConexion
 from PQTs.Selenium.Acciones.AccionesPais_to_USA import Acciones
@@ -58,18 +59,21 @@ def iniciarSpotify(barrier,email,password,i,id,db):
         print(f"Hilo {i} - SinginSpotify {returnLoginSpotify}")
 
     acciones.sleep(5)
-    acciones.ir('https://www.spotify.com/us/account/profile')
-    acciones.sleep(5)
-    #acciones.executeScript("document.body.style.zoom='50%'")
-    #acciones.nuevalista()
-    acciones.sleep(120)
-
-
+    def updatepais(acciones):
+        acciones.ir('https://www.spotify.com/us/account/profile')
+        acciones.sleep(5)
+        acciones.cambiarpais()
+        #acciones.executeScript("document.body.style.zoom='50%'")
+        #acciones.nuevalista()
+        acciones.sleep(10)
+    ejecutar=updatepais(acciones)
+    while ejecutar== False:
+            ejecutar=updatepais(acciones)
     
     db.iniciarDB()
-    db.updateOne("accountmanager",id,"creacionlistasentrenamiento",1)
+    db.updateOne("accountmanager",id,"pais","US")
     db.cerrarConexion()
-    print (f"Account {i} lista de reproduccion de entrenamiento creada ok")
+    print (f"Account {i}, {id} pais actualizado")
     # 
 
 

@@ -63,6 +63,7 @@ class Acciones(BaseAcciones):
             time.sleep(3)
             xpathbotonsave='//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/article/section/form/div/button'
             self.click(xpathbotonsave)
-            time.sleep(30)
+            time.sleep(3)
+            return True
         except:
-            pass
+            return False
