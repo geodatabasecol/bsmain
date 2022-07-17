@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import Select
 
 
 
-
+class Acciones(BaseAcciones):
     def ingresarSpotify(self):
         try:
             self.ir(urlSpotifysinginUS)
