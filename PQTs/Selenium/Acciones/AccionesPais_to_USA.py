@@ -57,12 +57,13 @@ class Acciones(BaseAcciones):
     
     def cambiarpais(self):
 
-        try:  
+        try: 
+
             time.sleep(5)                            
             xpathpaises = (By.XPATH, '//*[@id="country"]')
-            lista=self.findElement(xpathpaises)
-            items= Select(lista)
-            items.select_by_value('US')
+            select_element=self.findElement(xpathpaises)
+            select_object= Select(select_element)
+            select_object.select_by_value('US')
             time.sleep(3)
             xpathbotonsave =(By.ID, '__next')
             self.click(xpathbotonsave)
