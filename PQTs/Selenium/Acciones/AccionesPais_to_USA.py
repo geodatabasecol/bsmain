@@ -3,6 +3,7 @@
 from os import access
 import random
 import time
+from tkinter.tix import Select
 from PQTs.Selenium.Base import BaseAcciones
 
 from PQTs.Utilizar import urlSpotifysinginUS
@@ -57,12 +58,15 @@ class Acciones(BaseAcciones):
 
         try:  
             time.sleep(5)                            
-            xpathpaises = (By.XPATH, "//select*[@id='country']/option[text()='US']")
-            self.click(xpathpaises)
+            xpathpaises = (By.XPATH, '//*[@id="country"]')
+            lista=self.findElement(xpathpaises)
+            items= Select(lista)
+            items.select_by_visible_text("US")
             time.sleep(3)
             xpathbotonsave='//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/article/section/form/div/button'
             self.click(xpathbotonsave)
-            time.sleep(3)
+            print("click SAVE")
+            time.sleep(8)
             return True
         except:
             return False
