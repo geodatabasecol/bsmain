@@ -1,0 +1,6 @@
+pymongo==4.1.1
+selenium==4.3.0
+webdriver-manager==3.7.1
+requests==2.28.1
+PyAutoGUI==0.9.53
+pymongo[srv]
